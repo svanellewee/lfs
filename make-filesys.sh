@@ -87,13 +87,14 @@ function mount_root {
 }
 
 SOURCE_DIR=./source
-function get_sources {
+function get_sources_and_patches {
     mkdir -p ${SOURCE_DIR}
     wget --input-file=wget-list --continue --directory-prefix=${SOURCE_DIR}
     pushd ${SOURCE_DIR}
     md5sum -c md5sums
     popd
 }
+
 
 
 opt=$1
